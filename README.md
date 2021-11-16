@@ -1,20 +1,23 @@
 # manufacturingproduction
 Introduction:
-A manufacturing facility has products it wants to produce. Manufacturing team provides the products, production times, and changeovers. This script will conduct neighbor swap to improve the total production time, and use the Held Karp algorithm to solve the traveling salesmen problem to find solutions for the optimal total production time.
+
+A manufacturing facility has products it wants to produce. Manufacturing team provides the products, production times, changeovers, and initial order. This script will conduct neighbor swap to improve the total production time, and use the Held Karp algorithm to solve the traveling salesmen problem to find solutions with optimal total production time.
 
 Inputs: 
 JSON file containing
-  Products to produce with key of "products"
-  Production times with key of "production time"
-  Changeover matrix with key of "changeover"
-  Initial production order with key of "order"
+  * Products to produce with key of "products"
+  * Production times with key of "production time"
+  * Changeover matrix with key of "changeover"
+  * Initial production order with key of "order"
   
 Outputs:
-  Neibor swap solution with Total Production Time
-  Optimal solution(s) with Total Production Time
+* Neighbor swap solution with Total Production Time
+* Optimal solution(s) with Total Production Time
 
 Example: 
+
 Input: 
+
 {
 	"order": ["B", "G", "E", "A", "C", "I", "J", "D", "H", "F"], 
 	"products": ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J"], 
@@ -32,12 +35,19 @@ Input:
 }
 
 Output:
+
 NEIBOR SWAP: 
+
 ["B","G","C","E","A","J","I","H","D","F"]
+
 PRODUCTION TIME: 152
 
 OPTIMAL PRODUCTIONS: 
+
 ["D","I","E","H","C","B","A","J","F","G"]
+
 PRODUCTION TIME: 131
+
 ["H","C","B","A","J","F","G","D","I","E"]
+
 PRODUCTION TIME: 131
