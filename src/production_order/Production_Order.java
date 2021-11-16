@@ -15,6 +15,7 @@ public class Production_Order {
 		boolean goodJSON = checkJSON(jo);
 		if (goodJSON){
 			JSONObject jo1 = runSwaps(jo, false);
+			System.out.println("NEIGHBOR SWAP: ");
 			productionTime(jo1, true);
 		}
 		findOptimalProductionTime(jo);
@@ -188,7 +189,7 @@ public class Production_Order {
 	
 	//EXTRA - Find Optimal Production Time
 	public static int findOptimalProductionTime(JSONObject jo){
-		System.out.println("\nEXTRA - OPTIMAL PRODUCTIONS: ");
+		System.out.println("\nOPTIMAL PRODUCTIONS: ");
 		JSONArray c = (JSONArray) jo.get("changeover");
 		int[] circuit = HeldKarpCircuit(c, 1);
 		int[] circuitWeights = getCircuitWeights(c, circuit);
